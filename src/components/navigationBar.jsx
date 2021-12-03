@@ -15,19 +15,26 @@ class NavigationBar extends React.Component {
 					</li>
 					<li>
 						<NavLink className="nav-link" to="/home">
-							<i className="fa fa-home" aria-hidden="true" /> Home
+							<i className="fas fa-house-user"></i> Home
 						</NavLink>
 					</li>
 					{user && (
 						<React.Fragment>
 							<li>
 								<NavLink className="nav-link" to="/schools">
-									<i className="fa fa-university" aria-hidden="true" /> Schools
+									<i className="fas fa-school"></i> Schools
 								</NavLink>
 							</li>
+							{user.isAdmin &&
+								<li>
+									<NavLink className="nav-link" to="/students/list">
+										<i className="fas fa-users"></i> Students
+									</NavLink>
+								</li>
+							}
 							<li>
 								<NavLink className="nav-link" to="/profile">
-									<i className="fa fa-user" aria-hidden="true" /> {user.name}
+									<i className="fas fa-user-graduate"></i> {user.name}
 								</NavLink>
 							</li>
 							<li>
@@ -46,7 +53,7 @@ class NavigationBar extends React.Component {
 							</li>
 							<li>
 								<NavLink className="nav-link" to="/register">
-									<i class="fa fa-users" aria-hidden="true" /> Register
+									<i className="fas fa-registered" /> Register
 								</NavLink>
 							</li>
 						</React.Fragment>
