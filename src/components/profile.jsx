@@ -9,11 +9,11 @@ export default class profile extends Component {
 
 		return (
 			<div>
-				<h1>My Profile</h1>
+				<h1 className="animate__animated animate__pulse">My Profile</h1>
 				<div className="profile">
 					<p className="stress">Hello {auth.getCurrentUser().name} !</p>
 					<div className="cards">
-						{schools.map((school) => <Card key={school._id} label={school.title} />)}
+						{schools.map((school) => <Card key={school._id} label={school.name} />)}
 					</div>
 				</div>
 			</div>

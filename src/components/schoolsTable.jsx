@@ -7,7 +7,7 @@ export default class SchoolsTable extends Component {
 	}
 
 	columns = [
-		{ path: 'title', label: 'Title' },
+		{ path: 'name', label: 'Title' },
 		{ path: 'dailyRentalRate', label: 'Rate' },
 		{
 			key: 'like',

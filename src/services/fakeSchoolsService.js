@@ -1,51 +1,30 @@
 const schools = [
 	{
 		_id: '5b21ca3eeb7f6fbccd471815',
-		title: "Mang'u",
+		name: "Virginia",
 		dailyRentalRate: 2.5,
 		publishDate: '2018-01-03T19:04:28.809Z',
 		liked: true,
-		starred: true
+		starred: true,
+		postion: 1
 	},
 	{
 		_id: '5b21ca3eeb7f6fbccd471816',
-		title: 'Evergreen',
-		dailyRentalRate: 2.5
+		name: 'Evergreen',
+		dailyRentalRate: 2.5,
+		postion: 2
 	},
 	{
 		_id: '5b21ca3eeb7f6fbccd471817',
-		title: 'Tataglia',
-		dailyRentalRate: 3.5
-	},
-	{
-		_id: '5b21ca3eeb7f6fbccd471819',
-		title: 'Riverside',
-		dailyRentalRate: 3.5
+		name: 'Tataglia',
+		dailyRentalRate: 3.5,
+		postion: 3
 	},
 	{
 		_id: '5b21ca3eeb7f6fbccd47181a',
-		title: 'Riverdale',
-		dailyRentalRate: 3.5
-	},
-	{
-		_id: '5b21ca3eeb7f6fbccd47181b',
-		title: 'Beverly Hills',
-		dailyRentalRate: 3.5
-	},
-	{
-		_id: '5b21ca3eeb7f6fbccd47181e',
-		title: 'Los Angeles',
-		dailyRentalRate: 4.5
-	},
-	{
-		_id: '5b21ca3eeb7f6fbccd47181f',
-		title: 'Las Vegas',
-		dailyRentalRate: 3.5
-	},
-	{
-		_id: '5b21ca3eeb7f6fbccd471821',
-		title: 'Virginia',
-		dailyRentalRate: 3.5
+		name: 'Riverdale',
+		dailyRentalRate: 3.5,
+		position: 4
 	}
 ];
 

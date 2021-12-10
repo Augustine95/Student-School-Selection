@@ -15,7 +15,7 @@ class Schools extends Component {
 	handlePageChange = (page) => this.setState({ currentPage: page });
 
 	handleLike = (school) => {
-		const schools = [ ...this.state.schools ];
+		const schools = [...this.state.schools];
 		const index = schools.indexOf(school);
 		schools[index] = { ...school };
 		schools[index].liked = !schools[index].liked;
@@ -28,8 +28,8 @@ class Schools extends Component {
 		const { currentPage, pageSize, querySearch } = this.state;
 		const { schools: allSchools, sortColumn } = this.props;
 
-		const sorted = _.orderBy(allSchools, [ sortColumn.path ], [ sortColumn.order ]);
-		const filtered = sorted.filter((s) => s.title.toLowerCase().startsWith(querySearch.toLowerCase()));
+		const sorted = _.orderBy(allSchools, [sortColumn.path], [sortColumn.order]);
+		const filtered = sorted.filter((s) => s.name.toLowerCase().startsWith(querySearch.toLowerCase()));
 		const schools = paginate(filtered, currentPage, pageSize);
 		return { filtered, schools };
 	}
@@ -43,23 +43,25 @@ class Schools extends Component {
 		if (this.props.schools.length === 0) return <p>There are no movies in the database.</p>;
 		return (
 			<div>
-				<h1>Offered Schools</h1>
-				<p>Showing {filtered.length} schools in the database.</p>
-				<SearchBox onChange={this.handleSearch} value={querySearch} />
-				<SchoolsTable
-					onDelete={onDelete}
-					onSort={onSort}
-					sortColumn={sortColumn}
-					schools={schools}
-					onStar={onStarClick}
-					user={user}
-				/>
-				<Pagination
-					currentPage={currentPage}
-					itemsCount={filtered.length}
-					onPageChange={this.handlePageChange}
-					pageSize={pageSize}
-				/>
+				<h1 className="animate__animated animate__pulse">Offered Schools</h1>
+				<div className="schools-body">
+					<p>Showing {filtered.length} schools in the database.</p>
+					<SearchBox onChange={this.handleSearch} value={querySearch} />
+					<SchoolsTable
+						onDelete={onDelete}
+						onSort={onSort}
+						sortColumn={sortColumn}
+						schools={schools}
+						onStar={onStarClick}
+						user={user}
+					/>
+					<Pagination
+						currentPage={currentPage}
+						itemsCount={filtered.length}
+						onPageChange={this.handlePageChange}
+						pageSize={pageSize}
+					/>
+				</div>
 			</div>
 		);
 	}

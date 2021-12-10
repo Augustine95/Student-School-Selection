@@ -1,13 +1,11 @@
-body {
-  margin: 0;
-  padding: 0 0 0 0;
+:root {
+  --color-primary: #2a2138;
+  --color-secondary: #3b3458;
 }
 
-div,
-.App {
-  font-family: 'Open Sans', sans-serif;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 100%;
+body {
+  font-family: Andika, Arial, Helvetica, sans-serif;
+  font-size: 62.5%;
 }
 
 p {
@@ -31,13 +29,17 @@ ol li {
   font-weight: 400;
 }
 
+a {
+  font-size: 1.75rem;
+}
+
 .nav {
   display: flex;
   flex-direction: column;
 }
 
 nav ul {
-  background-color: #2a2138;
+  background-color: var(--color-primary);
   width: 100%;
 }
 
@@ -86,9 +88,6 @@ li .nav-link:hover {
   }
   .fa {
     text-align: center;
-  }
-  ul li {
-    margin: 1rem 0.01rem;
   }
 }
 
@@ -140,7 +139,7 @@ section {
 }
 
 .recommendations img:hover {
-  filter: drop-shadow(16px 16px 20px #222);
+  filter: drop-shadow(16px 16px 20px #999);
   transform: scale(1.5);
 }
 
@@ -148,6 +147,14 @@ section {
   overflow: hidden;
   text-overflow: ellipsis;
   width: inherit;
+}
+
+.recommendations .tweet-content::after {
+  content: close-quote;
+}
+
+.recommendations .tweet-content::before {
+  content: open-quote;
 }
 
 .recommendations .tweet-handle {
@@ -160,11 +167,11 @@ section {
 }
 
 .twetter-recommendation {
-  width: 40rem;
+  max-width: 40rem;
   padding: 1rem;
   border-radius: 10px;
   margin: 1rem;
-  background: lightgrey;
+  box-shadow: 0 0 30px 10px rgb(236, 234, 234);
 }
 
 .stress {
@@ -226,4 +233,44 @@ ol li {
 
 .profile .cards:hover {
   transform: scale(1.01);
+}
+
+/* Help Guide */
+.help-guide {
+  background: var(--color-secondary);
+}
+
+.help-guide__header {
+  text-align: center;
+}
+
+.skew-left {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 85%);
+  padding-bottom: 6rem;
+}
+
+.container-banner {
+  color: #fff;
+  margin: 3rem 0;
+  padding-top: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+/* Introduction Content */
+.introduction-content {
+  background: var(--color-secondary);
+  padding-bottom: 3rem;
+  margin: 6rem 0;
+}
+
+.introduction-content__body {
+  text-indent: 3rem;
+}
+
+/* Schools Body */
+@media screen and (min-width: 768px) {
+  .schools-body {
+    max-width: 60rem;
+  }
 }

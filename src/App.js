@@ -12,6 +12,7 @@ import Logout from './components/logout';
 import NavigationBar from './components/navigationBar';
 import { getSchools } from './services/fakeSchoolsService';
 import ProtectedRoute from './components/common/protectedRoute';
+import StudentsList from './components/studentsList';
 import auth from './services/authService';
 import './App.css';
 
@@ -28,7 +29,7 @@ class App extends Component {
 	}
 
 	handleStarClick = (school) => {
-		const schools = [ ...this.state.schools ];
+		const schools = [...this.state.schools];
 		const index = schools.indexOf(school);
 		schools[index] = { ...school };
 		schools[index].starred = !schools[index].starred;
@@ -68,6 +69,7 @@ class App extends Component {
 						<ProtectedRoute path="/login" component={LoginForm} />
 						<Route path="/scores" component={InputScores} />
 						<Route path="/home" component={HomePage} />
+						<Route path="/students/list" component={StudentsList} />
 						<Route path="/students/:id" component={InputScores} />
 						<Route
 							path="/schools"

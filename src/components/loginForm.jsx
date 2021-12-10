@@ -32,7 +32,7 @@ class LoginForm extends Form {
 	render() {
 		return (
 			<div>
-				<h1>Login</h1>
+				<h1 className="animate__animated animate__pulse">Login</h1>
 				<form
 					// className="w-50"
 					onSubmit={this.handleSubmit}
