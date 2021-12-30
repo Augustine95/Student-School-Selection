@@ -33,10 +33,7 @@ class LoginForm extends Form {
 		return (
 			<div>
 				<h1 className="animate__animated animate__pulse">Login</h1>
-				<form
-					// className="w-50"
-					onSubmit={this.handleSubmit}
-				>
+				<form onSubmit={this.handleSubmit} >
 					{this.renderInput('indexNumber', 'Index')}
 					{this.renderInput('password', 'Password', 'password')}
 					{this.renderButton('Login')}

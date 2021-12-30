@@ -1,7 +1,11 @@
 :root {
   --color-primary: #2a2138;
   --color-secondary: #3b3458;
+  --border-radius: 30px;
+  --box-shadow: 0 0 30px 10px rgb(236, 234, 234);
 }
+
+/* Typography */
 
 body {
   font-family: Andika, Arial, Helvetica, sans-serif;
@@ -9,54 +13,49 @@ body {
 }
 
 p {
-  font-size: 1.8rem;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 1.8rem;
   font-weight: 300;
 }
 
 h1 {
+  color: #000;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  text-shadow: 2px 2px #555;
   word-spacing: 1.5rem;
 }
 
-h1 {
-  font-weight: 700;
-  color: #000;
-  text-shadow: 2px 2px #555;
-  letter-spacing: 0.05rem;
-}
-
-ol li {
+.list__item {
   font-weight: 400;
 }
 
-a {
+.anchor,
+.nav-link {
   font-size: 1.75rem;
 }
 
 .nav {
+  background-color: var(--color-primary);
   display: flex;
   flex-direction: column;
-}
-
-nav ul {
-  background-color: var(--color-primary);
   width: 100%;
 }
 
-nav li {
+.list {
   list-style: none;
 }
 
-.nav li:hover {
+.nav__list:hover {
   text-decoration: none;
   background: #221a2e;
 }
 
-li .nav-link {
+.nav-link {
   color: #fff;
 }
 
-li .nav-link:hover {
+.nav-link:hover {
   color: #fff;
   text-decoration: none;
 }
@@ -75,18 +74,15 @@ li .nav-link:hover {
   form {
     width: 45%;
   }
-  nav ul {
-    justify-content: flex-start;
-  }
+
   .nav {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
   }
-  .nav-title {
-    left: 0;
-  }
-  .fa {
+
+  .fa,
+  .fas {
     text-align: center;
   }
 }
@@ -128,50 +124,56 @@ section {
   line-height: 1.5;
 }
 
-.recommendations img {
-  max-width: 5.2rem;
-  object-fit: cover;
-  float: left;
-  border-radius: 2.5rem;
-  margin-right: 1rem;
+/* Grids */
+.grid {
   display: grid;
-  grid-row-gap: 1rem;
 }
 
-.recommendations img:hover {
-  filter: drop-shadow(16px 16px 20px #999);
-  transform: scale(1.5);
+@media screen and (min-width: 768px) {
+  .grid--1x2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.recommendations .tweet-content {
+/* Testimonial */
+.testimonial {
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin: 2rem auto;
+  max-width: 35rem;
+  max-height: 20rem;
   overflow: hidden;
-  text-overflow: ellipsis;
-  width: inherit;
+  padding: 2rem;
 }
 
-.recommendations .tweet-content::after {
-  content: close-quote;
+.testimonial__message {
+  /* TODO: Limit testimonial message up to two lines.  */
 }
 
-.recommendations .tweet-content::before {
-  content: open-quote;
+.testimonial__image {
+  border-radius: 50%;
+  float: left;
+  margin-right: 1rem;
+  width: 7rem;
 }
 
-.recommendations .tweet-handle {
+.testimonial__handle {
   font-weight: bold;
 }
 
-.recommendations .tweet-handle:hover {
-  color: dodgerblue;
-  cursor: pointer;
+.testimonial__content::before {
+  content: open-quote;
 }
 
-.twetter-recommendation {
-  max-width: 40rem;
-  padding: 1rem;
-  border-radius: 10px;
-  margin: 1rem;
-  box-shadow: 0 0 30px 10px rgb(236, 234, 234);
+.testimonial__content::after {
+  content: close-quote;
+}
+
+@media screen and (min-width: 768px) {
+  .testimonials {
+    margin: 1rem auto;
+    max-width: 90rem;
+  }
 }
 
 .stress {
@@ -182,17 +184,6 @@ section {
 
 ol li {
   font-size: 1.5rem;
-}
-
-@media screen and (min-width: 630px) {
-  .recommendations h2 {
-    display: block;
-  }
-
-  .recommendations {
-    display: flex;
-    justify-content: space-evenly;
-  }
 }
 
 .card {

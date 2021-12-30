@@ -5,11 +5,11 @@ class RecommendationCard extends React.Component {
         const { tweeterHandle, message, image } = this.props;
 
         return (
-            <div className="twetter-recommendation">
+            <div className="testimonial">
                 <article>
-                    <img src={image} alt={`An image of ${tweeterHandle}`} />
-                    <p className="tweet-handle">{`@${tweeterHandle}`}</p>
-                    <p className="tweet-content">{message}</p>
+                    <img class="testimonial__image" src={image} alt={`An image of ${tweeterHandle}`} />
+                    <p className="testimonial__handle">{`@${tweeterHandle}`}</p>
+                    <p className="testimonial__message">{message}</p>
                 </article>
             </div>
         );
