@@ -12,6 +12,7 @@ class NavigationBar extends React.Component {
 
   render() {
     const { user } = this.props
+    console.log(user)
 
     return (
       <nav className="nav collapsible">
@@ -21,47 +22,48 @@ class NavigationBar extends React.Component {
         </svg>
         <ul className="list nav__list collapsible__content">
           <li className="nav__item">
-            <a className="nav__anchor" href="/">
-              <i className="fa fa-home"></i> Home
-            </a>
+            <NavLink className="nav__anchor" to="/">
+              Home
+            </NavLink>
           </li>
           {user && (
             <React.Fragment>
               <li className="nav__item">
-                <a className="nav__anchor" href="/schools">
+                <NavLink className="nav__anchor" to="/schools">
                   Schools
-                </a>
+                </NavLink>
               </li>
               {user.isAdmin && (
                 <li className="nav__item">
-                  <a className="nav__anchor" href="/students/list">
+                  <NavLink className="nav__anchor" to="/students/list">
                     Students
-                  </a>
+                  </NavLink>
                 </li>
               )}
               <li className="nav__item">
-                <a className="nav__anchor" href="/profile">
-                  <i className="fa fa-user"></i> Profile
-                </a>
+                <NavLink className="nav__anchor" to="/profile">
+                  {user.name}
+                </NavLink>
               </li>
               <li className="nav__item">
-                <a className="nav__anchor" href="/logout">
-                  <i className="fa fa-sign-out" />
+                <NavLink className="nav__anchor" to="/logout">
                   Logout
-                </a>
+                </NavLink>
               </li>
             </React.Fragment>
           )}
-          <li className="nav__item">
-            <a className="nav__anchor" href="/login">
-              <i className="fa fa-sign-in"></i> Login
-            </a>
-          </li>
-          <li className="nav__item">
-            <a className="nav__anchor" href="/register">
-              Register
-            </a>
-          </li>
+          {!user && <React.Fragment>
+            <li className="nav__item">
+              <NavLink className="nav__anchor" to="/login">
+                Login
+              </NavLink>
+            </li>
+            <li className="nav__item">
+              <NavLink className="nav__anchor" to="/register">
+                Register
+              </NavLink>
+            </li>
+          </React.Fragment>}
         </ul>
       </nav>
     )
