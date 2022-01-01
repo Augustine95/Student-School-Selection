@@ -184,9 +184,6 @@ h3 {
   width: auto;
 }
 
-@media screen and (min-width: 768px) {
-}
-
 /* Block Plan */
 .plan {
   border-radius: var(--border-radius);
@@ -269,13 +266,6 @@ h3 {
 
 .testimonial__content::after {
   content: close-quote;
-}
-
-@media screen and (min-width: 768px) {
-  /* .testimonials {
-    margin: 1rem auto;
-    max-width: 90rem;
-  } */
 }
 
 .stress {
@@ -375,10 +365,18 @@ ol li {
 }
 
 /* Schools Body */
-@media screen and (min-width: 768px) {
-  .schools-body {
-    max-width: 60rem;
-  }
+.fa {
+  cursor: pointer;
+}
+
+.schools {
+  font-size: 2rem;
+}
+
+.schools__table,
+.schools__search-box {
+  max-width: 80rem;
+  width: auto;
 }
 
 /* Testonials */
@@ -518,4 +516,9 @@ a:hover {
   right: 2rem;
   left: 2rem;
   z-index: 1;
+}
+
+/* Tables */
+.table {
+  font-size: 2rem;
 }

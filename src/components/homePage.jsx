@@ -65,8 +65,8 @@ export default class HomePage extends Component {
               <div className="callout__content">
                 <h3 className="callout__heading">Ready to Get Started?</h3>
                 <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Quibusdam, esse!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa,
+                  reiciendis.
                 </p>
               </div>
               <a href="/login" className="btn btn--secondary btn--stretched">
