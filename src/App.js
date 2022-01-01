@@ -49,7 +49,7 @@ class App extends Component {
 		return (
 			<React.Fragment className="App">
 				<NavigationBar user={user} />
-				<main className="container">
+				<main className="containers">
 					<Switch>
 						<Route
 							path="/profile"
