@@ -10,7 +10,7 @@ export default class HomePage extends Component {
     return (
       <article className="login hero">
         <section className="grid grid--1x2 block block--secondary">
-          <h1 className="block__heading animate__animated animate__pulse">
+          <h1 className="block__heading block-hero__heading animate__animated animate__pulse">
             Integrated School Selection
           </h1>
           <img className="hero__image" src={hero} alt="" />
@@ -65,8 +65,8 @@ export default class HomePage extends Component {
               <div className="callout__content">
                 <h3 className="callout__heading">Ready to Get Started?</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa,
-                  reiciendis.
+                  We are excited to have you on board. If your are ready the
+                  services are just one click away.
                 </p>
               </div>
               <a href="/login" className="btn btn--secondary btn--stretched">
